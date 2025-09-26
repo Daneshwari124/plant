@@ -1,0 +1,63 @@
+# -------------------------
+# Python / FastAPI backend
+# -------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.log
+*.env
+.env
+.env.*
+.venv/
+venv/
+instance/
+.mypy_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# TensorFlow / ML models (big files)
+*.h5
+*.pb
+*.ckpt
+*.tflite
+*.onnx
+*.weights
+
+# -------------------------
+# Flutter / Dart frontend
+# -------------------------
+# Flutter build outputs
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+.dart_tool/
+coverage/
+
+# iOS
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/ServiceDefinitions.json
+ios/Runner/GeneratedPluginRegistrant.*
+
+# Android
+android/.gradle/
+android/app/build/
+android/local.properties
+
+# -------------------------
+# General OS / Editor files
+# -------------------------
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+*.iml

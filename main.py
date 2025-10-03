@@ -35,7 +35,7 @@ except Exception as e:
     try:
         import gdown
         print("📥 Downloading model from Google Drive...")
-        url = 'https://drive.google.com/uc?id=1I0hGjq6B4UCA8JYvX1WTKR4V8jYcmKdM'
+        url = 'https://drive.google.com/file/d/1pNubAFqcZ8KTPThSBKcSHkrcCA9o51-D/view?usp=sharing'
         gdown.download(url, 'model.h5', quiet=False)
         model = load_model('model.h5')
         with open('classes.txt', 'r') as f:

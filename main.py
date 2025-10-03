@@ -32,17 +32,28 @@ try:
 except Exception as e:
     print(f"❌ Error loading model: {e}")
     # Try to download model if not found
-    try:
-        import gdown
-        print("📥 Downloading model from Google Drive...")
-        url = 'https://drive.google.com/file/d/1pNubAFqcZ8KTPThSBKcSHkrcCA9o51-D/view?usp=sharing'
-        gdown.download(url, 'model.h5', quiet=False)
-        model = load_model('model.h5')
-        with open('classes.txt', 'r') as f:
-            class_names = [line.strip() for line in f.readlines()]
-        print("✅ Backup model loaded")
-    except:
-        raise RuntimeError("Failed to load any model")
+    
+    import gdown
+
+MODEL_PATH = "retrained_model.h5"
+CLASSES_PATH = "retrained_classes.txt"
+
+# Check if model exists, if not download
+if not os.path.exists(MODEL_PATH):
+    print("📥 Downloading model from Google Drive...")
+    gdown.download(
+        "https://drive.google.com/file/d/1pNubAFqcZ8KTPThSBKcSHkrcCA9o51-D/view?usp=drive_link",
+        MODEL_PATH,
+        quiet=False
+    )
+
+model = load_model(MODEL_PATH)
+
+with open(CLASSES_PATH, "r") as f:
+    class_names = [line.strip() for line in f.readlines()]
+
+print(f"✅ Model loaded successfully with {len(class_names)} classes")
+
 
 # Disease solutions
 disease_solutions = {
